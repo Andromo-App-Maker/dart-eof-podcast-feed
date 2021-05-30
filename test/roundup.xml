@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-stylesheet href="http://www.radionikkei.jp/stylesheet/podcasting.xsl" type="text/xsl" ?>
+
+  
+
+
+    
+  
+<rss
+  version="2.0"
+  xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd"
+  xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
+  <channel>
+    <title>伊藤洋一のRound Up World Now!</title>
+    <link>http://www.radionikkei.jp/roundup/</link>
+    <description>伊藤洋一氏が日本だけでなく世界中で起きた1週間の経済・社会・政治関連の出来事、指標、トピックスなどを分かりやすく解説。刻々と変化していく現代をグローバルに見渡すことのできる30分です。</description>
+    <language>ja</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    
+    <itunes:author>ラジオNIKKEI</itunes:author>
+      <itunes:image href="http://www.radionikkei.jp/archives/program/roundup/podcast.jpg"/>
+    <itunes:owner>
+      <itunes:email>webmaster@radionikkei.jp</itunes:email>
+      <itunes:name>NIKKEI RADIO BROADCASTING CORPORATION</itunes:name>
+    </itunes:owner>
+    <itunes:summary>伊藤洋一氏が日本だけでなく世界中で起きた1週間の経済・社会・政治関連の出来事、指標、トピックスなどを分かりやすく解説。刻々と変化していく現代をグローバルに見渡すことのできる30分です。</itunes:summary>
+    
+      
+      
+      
+      
+        <itunes:category text="Business">
+          <itunes:category text="Business News" />
+        </itunes:category>
+      
+    
+    
+    
+      
+    
+    
+      
+      
+      
+        <item>
+          
+              
+            
+          <title>Round Up World Now!（2020.11.27放送分）</title>
+          <link>http://www.radionikkei.jp/roundup/</link>
+          <enclosure url="http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201127.mp3" length="" type="audio/mpeg"/>
+          
+              <pubDate>Fri, 27 Nov 2020 22:59:00 +0900</pubDate>
+            
+          <itunes:author>ラジオNIKKEI</itunes:author>
+          <description>＜ヘッドライン＞中国で社債の債務不履行が多発　総額1570億元、過去最高を上回るペース／米連邦政府・一般調達局、バイデン前大統領への政権移行業務を容認　トランプ大統領も同意／三越伊勢丹HD、伊勢丹新宿店の全商品をネット上で接客・販売へ　専用アプリで2021年度に約100万品目取り扱い開始／NYダウ、史上初めて3万ドルの大台乗せ　政権移行開始とコロナワクチン開発進展を好感／政府・コロナ分科会、「感染対策が徹底できない場合は感染状況が『ステージ３』の地域との往来を今後3週間、自粛すべき」との提言／公取委、「大企業が新興スタートアップに知財無償提供求めるなど不当な要求」と指摘へ　独禁法違反の警鐘、技術革新の芽を摘まぬよう監視／FRB公表の11月FOMC議事録「参加者の多くが『アメリカ国債の購入増加など、追加緩和が可能だ』と指摘」　12月会合で量的緩和政策の拡充を検討する方針表明／慶大と東京歯科大、合併に向けた協議を開始と発表　2023年メドに統合へ　　
+＜ポイント＞ （１） 尾身さんの提言をこう受け止める（２） コロナ禍のもとでのNYダウ高値更新をこう見る（３） 伊勢丹新宿店全商品ネットで接客・販売をこう見る 
+＜今週のここ／これを見てきた＞秋の京都</description>
+          
+              <guid>http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201127.mp3</guid>
+            
+        </item>
+      
+    
+      
+      
+      
+        <item>
+          
+              
+            
+          <title>Round Up World Now!（2020.11.20放送分）</title>
+          <link>http://www.radionikkei.jp/roundup/</link>
+          <enclosure url="http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201120.mp3" length="" type="audio/mpeg"/>
+          
+              <pubDate>Fri, 20 Nov 2020 22:59:00 +0900</pubDate>
+            
+          <itunes:author>ラジオNIKKEI</itunes:author>
+          <description>＜ヘッドライン＞国内のコロナ新規感染者数が急増、過去最多を連日更新　菅総理「専門家からは飲食を通じた感染リスクが指摘されている」、北海道は札幌市と道内他地域との往来自粛・不要不急の外出自粛を要請を決定／コロナに対し「メッセンジャーRNA」技術によるワクチン開発が終盤で高い有効性　米新興企業モデルナと製薬大手ファイザーが90％超える高い有効性を達成／2020年7〜9月期、コロナによる社会環境の変化とらえ世界の4社に1社が最高益　在宅と巣ごもりからデジタル関連の好業績目立つ／米大統領選、全州で勝敗判明　バイデン306・トランプ232と大差／インド除く日本など16カ国、RCEPに署名　GDPや貿易額で世界の3割占める自由貿易協定へ／スパコン「富岳」、6月に続き計算速度世界首位を継続　理化学研究所と富士通が開発／3メガバンクやNTTグループなど30社超、2022年にのデジタル通貨の共通基盤を実用化／米アップル、有料アプリの開発者への配信料を引き下げへ　来年1月から中小事業者向けを30％から15％に／中国・王毅外相、11/24〜25に来日し茂木外相と会談　菅総理との面会も調整　　
+＜ポイント＞ （１） コロナ第３波をどう乗り切るか？（２） 敗北認めないトランプが招くリスクについて
+＜今週のここ／これを見てきた＞冬の富士山</description>
+          
+              <guid>http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201120.mp3</guid>
+            
+        </item>
+      
+    
+      
+      
+      
+        <item>
+          
+              
+            
+          <title>Round Up World Now!（2020.11.13放送分）</title>
+          <link>http://www.radionikkei.jp/roundup/</link>
+          <enclosure url="http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201113.mp3" length="" type="audio/mpeg"/>
+          
+              <pubDate>Fri, 13 Nov 2020 22:59:00 +0900</pubDate>
+            
+          <itunes:author>ラジオNIKKEI</itunes:author>
+          <description>＜ヘッドライン＞米大統領選、バイデン前副大統領が当選確実に　バイデン氏「コロナ対策を最優先課題に位置付ける」／米製薬大手ファイザー「開発中の新型コロナウイルスのワクチンの治験で予防効果が90%以上有効」／コロナ感染が再拡大　政府、対策会議で感染防止策の徹底を求める／2020年4〜9月期決算企業の7社に1社、純利益が過去最高　「巣ごもり」消費で食品スーパーや通販、デジテル化を急ぐ企業の需要を取り込んだ業種／日銀、地域金融機関を支援する新制度　経営統合や経始削減を条件に当座預金に年0.1%の上乗せ金利／中国・国家市場監督管理総局、ネット企業の独占的行為を規制する新指針の草案　アリババ集団など取り締まる狙い／日経平均、29年ぶりに2万5000円台を回復　中長期の海外勢の買いも　　　
+＜ポイント＞ （１） コロナ再拡大を如何に乗り切るか？（２） バイデン新大統領の前途多難
+＜今週のここ／これを見てきた＞鬼滅の刃</description>
+          
+              <guid>http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201113.mp3</guid>
+            
+        </item>
+      
+    
+      
+      
+      
+        <item>
+          
+              
+            
+          <title>Round Up World Now!（2020.11.6放送分）</title>
+          <link>http://www.radionikkei.jp/roundup/</link>
+          <enclosure url="http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201106c.mp3" length="" type="audio/mpeg"/>
+          
+              <pubDate>Fri, 06 Nov 2020 22:59:00 +0900</pubDate>
+            
+          <itunes:author>ラジオNIKKEI</itunes:author>
+          <description>＜ヘッドライン＞「大阪都構想」住民投票、僅差で否決　大阪市、政令指定都市のまま存続／中国政府、2035年までの新エネルギー車発展計画　米中対立の長期化を想定、電池など中核技術の開発促す／欧州主要国、コロナ急拡大で軒並み1ヶ月程度の行動制限へ　クリスマス休暇前の再開目指す／中国共産党、2021年〜25年の第14次5カ年計画の草案を公表　習総書記「2035年までにGDPと一人あたりの収入を2倍にすることは完全に可能」／香港警察、公共放送「香港電台」プロデューサーを逮捕　2019年に暴力団関係者とみられる集団がデモ参加者を襲った事件に関する番組を制作／ソフトバンクとKDDi、今後10年の5G基地局整備などに各2兆円 関連産業の裾野広く、景気の下支えに／国交省、都内タクシー事業者の運送約款「タクシー運転手が、正当な理由なしでマスク着用しない客の乗車を拒否できる」を認可／FRB、FOMCでゼロ金利政策と量的緩和政策の維持を決定　パウエル議長「コロナの感染再拡大が懸念材料」／米大統領選、バイデン候補が当選に必要な選挙人270人に迫る　トランプ陣営、「郵便投票の集計に不正」と提訴　
+＜ポイント＞ （１） 大混乱の米大統領選が問いかけるもの（２） 中国「2035年にGDP倍増」をこう見る
+＜今週のここ／これを見てきた＞有・新 変形地下アーケード街</description>
+          
+              <guid>http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201106c.mp3</guid>
+            
+        </item>
+      
+    
+      
+      
+      
+        <item>
+          
+              
+            
+          <title>Round Up World Now!（2020.10.30放送分）</title>
+          <link>http://www.radionikkei.jp/roundup/</link>
+          <enclosure url="http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201030.mp3" length="" type="audio/mpeg"/>
+          
+              <pubDate>Fri, 30 Oct 2020 22:59:00 +0900</pubDate>
+            
+          <itunes:author>ラジオNIKKEI</itunes:author>
+          <description>＜ヘッドライン＞欧州でコロナ感染止まらず行動制限広がる　仏は30日から1ヶ月間外出制限／西村経済再生相「集中しがちな休暇を分散するのが一番の目的だ」　政府コロナ分科会提言「年末年始の休暇に加えて、前後でまとまった休暇を取得すること」を説明／米上院本会議、エイミー・バレット氏の連邦最高裁判事指名を承認　トランプ大統領が指名した保守派／KDDI、格安ブランド「UQモバイル」にデータ容量20GB・月額3980円の新プラン導入の方針／米マイクロソフト2020年7〜9月期決算、四半期ベースで過去最高更新　コロナによる在宅勤務の浸透でクラウドサービスが拡大／中国共産党・5中全会、2035年に「1人当たりGDPを中等先進国並みにする」との目標掲げ閉幕／米7〜9月期GDP成長率、年率換算で前期比プラス33.1%　コロナ危機前より3.5%小さい水準／米大統領選投開票に混乱の懸念　10州前後で11/3に大勢が判明しない見通し、郵便投票が急増　
+＜ポイント＞ （１） 米大統領選投開票、大混乱の予感（２） 米大統領への懸念強めるマーケット
+＜今週のここ／これを見てきた＞アップルウォッチ６</description>
+          
+              <guid>http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201030.mp3</guid>
+            
+        </item>
+      
+    
+  </channel>
+</rss>
+
