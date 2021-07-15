@@ -9,7 +9,8 @@ class PodcastEpisodeEnclosure {
   PodcastEpisodeEnclosure({this.url, this.length, this.type});
 
   /// Generate from XML
-  factory PodcastEpisodeEnclosure.fromXml(XmlElement element) => PodcastEpisodeEnclosure(
+  factory PodcastEpisodeEnclosure.fromXml(XmlElement element) =>
+      PodcastEpisodeEnclosure(
         url: element.getAttribute('url'),
         length: element.getAttribute('length'),
         type: element.getAttribute('type'),
@@ -18,7 +19,10 @@ class PodcastEpisodeEnclosure {
   /// Podcast from JSON object
   factory PodcastEpisodeEnclosure.fromJson(Map<String, dynamic> json) =>
       PodcastEpisodeEnclosure(
-          url: json[_url], length: json[_length], type: json[_type]);
+        url: json[_url],
+        length: json[_length],
+        type: json[_type],
+      );
 
   /// Podcast to JSON object
   Map<String, dynamic> toJson() => {_url: url, _length: length, _type: type};
@@ -40,25 +44,26 @@ class PodcastEpisodeEnclosure {
 /// Represents the Episode Entity and atributes
 class PodcastEpisode {
   /// Constructor
-  PodcastEpisode(
-      {required this.title,
-      required this.enclosure,
-      this.parent,
-      this.guid,
-      this.description,
-      this.duration,
-      this.pubDate,
-      this.iTunesImageUrl,
-      this.iTunesTitle,
-      this.iTunesEpisode,
-      this.iTunesSeason,
-      this.itunesDescription,
-      this.link,
-      this.iTunesEpisodeType,
-      this.iTunesBlock,
-      this.iTunesKeywords,
-      this.lastPosition,
-      this.notes,});
+  PodcastEpisode({
+    required this.title,
+    required this.enclosure,
+    this.parent,
+    this.guid,
+    this.description,
+    this.duration,
+    this.pubDate,
+    this.iTunesImageUrl,
+    this.iTunesTitle,
+    this.iTunesEpisode,
+    this.iTunesSeason,
+    this.itunesDescription,
+    this.link,
+    this.iTunesEpisodeType,
+    this.iTunesBlock,
+    this.iTunesKeywords,
+    this.lastPosition,
+    this.notes,
+  });
 
   /// Constructor from XML
   factory PodcastEpisode.fromXml(XmlElement element, [Podcast? parent]) {
@@ -108,7 +113,8 @@ class PodcastEpisode {
 
     String? iTunesImageUrl;
     try {
-      iTunesImageUrl = element.findElements('itunes:image').first.getAttribute('href');
+      iTunesImageUrl =
+          element.findElements('itunes:image').first.getAttribute('href');
     } catch (e) {}
 
     iTunesImageUrl ??= iTunesImageUrl;
@@ -154,23 +160,24 @@ class PodcastEpisode {
     } catch (e) {}
 
     return PodcastEpisode(
-        parent: parent,
-        title: title,
-        enclosure: enclosure,
-        guid: guid,
-        description: description,
-        notes: notes,
-        duration: duration,
-        pubDate: pubDate,
-        iTunesImageUrl: iTunesImageUrl,
-        iTunesTitle: iTunesTitle,
-        iTunesEpisode: iTunesEpisode,
-        iTunesSeason: iTunesSeason,
-        itunesDescription: itunesDescription,
-        link: link,
-        iTunesEpisodeType: iTunesEpisodeType,
-        iTunesBlock: iTunesBlock,
-        iTunesKeywords: iTunesKeywords);
+      parent: parent,
+      title: title,
+      enclosure: enclosure,
+      guid: guid,
+      description: description,
+      notes: notes,
+      duration: duration,
+      pubDate: pubDate,
+      iTunesImageUrl: iTunesImageUrl,
+      iTunesTitle: iTunesTitle,
+      iTunesEpisode: iTunesEpisode,
+      iTunesSeason: iTunesSeason,
+      itunesDescription: itunesDescription,
+      link: link,
+      iTunesEpisodeType: iTunesEpisodeType,
+      iTunesBlock: iTunesBlock,
+      iTunesKeywords: iTunesKeywords,
+    );
   }
 
   /// load PodcastEpisode from a JSON object
