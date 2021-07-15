@@ -17,14 +17,14 @@ import 'podcast_episode.dart';
 ///
 class Podcast {
   /// PodcastConstructor
-  const Podcast({
+  Podcast({
     required this.title,
     required this.description,
     required this.podcastCoverUrl,
     required this.language,
     required this.category,
     required this.explicit,
-    this.episodes,
+    this.episodes = const [],
     this.owner,
     this.url,
     this.author,
@@ -131,22 +131,22 @@ class Podcast {
 
     // new
 
-    String _lastBuildDate;
+    String? _lastBuildDate;
     try {
       _lastBuildDate ??= element.findElements('lastBuildDate').first.text;
     } catch (e) {}
 
-    String _pubDate;
+    String? _pubDate;
     try {
       _pubDate ??= element.findElements('pubDate').first.text;
     } catch (e) {}
 
-    String _iTunesSubtitle;
+    String? _iTunesSubtitle;
     try {
       _iTunesSubtitle ??= element.findElements('itunes:summary').first.text;
     } catch (e) {}
 
-    String _iTunesKeyWords;
+    String? _iTunesKeyWords;
     try {
       _iTunesKeyWords ??= element.findElements('itunes:keywords').first.text;
     } catch (e) {}
@@ -165,7 +165,7 @@ class Podcast {
         lastBuildDate: _lastBuildDate,
         pubDate: _pubDate,
         iTunesSubtitle: _iTunesSubtitle,
-        iTunesKeyWords: _iTunesKeyWords);
+        iTunesKeyWords: _iTunesKeyWords,);
 
     // Retrieve podcast episodes
     List<PodcastEpisode> _episodes;
@@ -234,7 +234,7 @@ class Podcast {
       };
 
   /// Episode List
-  List<PodcastEpisode>? episodes;
+  List<PodcastEpisode> episodes;
   static const String _episodes = 'episodes';
 
   /// Podcast Title
@@ -280,19 +280,19 @@ class Podcast {
   // TODO(Fix007): add additional fields, lastBuild date, pubDate, iTunesSubtitle, iTunesKeyWords
 
   /// Podcast last build date
-  final String lastBuildDate;
+  final String? lastBuildDate;
   static const String _lastBuildDate = 'lastBuildDate';
 
   /// Podcast PubDate
-  final String pubDate;
+  final String? pubDate;
   static const String _pubDate = 'pubDate';
 
   /// Podcast iTunes subtitle
-  final String iTunesSubtitle;
+  final String? iTunesSubtitle;
   static const String _iTunesSubtitle = 'iTunesSubtitle';
 
   /// Podcast iTunesKeyWords
-  final String iTunesKeyWords;
+  final String? iTunesKeyWords;
   static const String _iTunesKeyWords = 'iTunesKeyWords';
 
   /// Init a Podcast Class with the Feed Address [uri]

@@ -19,12 +19,12 @@ void main() {
     expect(feed.url, 'http://www.radionikkei.jp/roundup/');
     expect(feed.author, 'ラジオNIKKEI');
     expect(feed.copyright, null);
-    expect(feed.episodes!.length, 5);
-    expect(feed.episodes!.first.iTunesImageUrl, null);
+    expect(feed.episodes.length, 5);
+    expect(feed.episodes.first.iTunesImageUrl, null);
     expect(
-        feed.episodes!.first.enclosure.url, 'http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201127.mp3');
-    expect(feed.episodes!.first.enclosure.length, '');
-    expect(feed.episodes!.first.enclosure.type, 'audio/mpeg');
+        feed.episodes.first.enclosure.url, 'http://podcasting.radionikkei.jp/podcasting/roundup/roundup-201127.mp3');
+    expect(feed.episodes.first.enclosure.length, '');
+    expect(feed.episodes.first.enclosure.type, 'audio/mpeg');
   });
   test('test hiromaeda.xml', () async {
     final XmlDocument _docXML = XmlDocument.parse(await File('./test/hiromaeda.xml').readAsString());
@@ -40,11 +40,11 @@ void main() {
     expect(feed.url, 'https://hiromaeda.com');
     expect(feed.author, '前田ヒロ Startup Podcast');
     expect(feed.copyright, null);
-    expect(feed.episodes!.length, 19);
-    expect(feed.episodes!.first.iTunesImageUrl, null);
-    expect(feed.episodes!.first.enclosure.url,
+    expect(feed.episodes.length, 19);
+    expect(feed.episodes.first.iTunesImageUrl, null);
+    expect(feed.episodes.first.enclosure.url,
         'https://media.blubrry.com/hiromaeda/content.blubrry.com/hiromaeda/20_FINAL_Episode_20-Mukai-san_mixdown.mp3');
-    expect(feed.episodes!.first.enclosure.length, '73936531');
+    expect(feed.episodes.first.enclosure.length, '73936531');
     expect(feed.episodes!.first.enclosure.type, 'audio/mpeg');
   });
 }
