@@ -58,10 +58,10 @@ class PodcastEpisode {
       this.iTunesBlock,
       this.iTunesKeywords,
       this.lastPosition,
-      this.notes});
+      this.notes,});
 
   /// Constructor from XML
-  factory PodcastEpisode.fromXml(XmlElement element, [Podcast parent]) {
+  factory PodcastEpisode.fromXml(XmlElement element, [Podcast? parent]) {
     final PodcastEpisodeEnclosure enclosure = PodcastEpisodeEnclosure.fromXml(
         element.findElements('enclosure').first);
 
@@ -128,27 +128,27 @@ class PodcastEpisode {
       iTunesEpisode = element.findElements('itunes:season').first.text;
     } catch (e) {}
 
-    String itunesDescription;
+    String? itunesDescription;
     try {
       itunesDescription = element.findElements('itunes:season').first.text;
     } catch (e) {}
 
-    String link;
+    String? link;
     try {
       link = element.findElements('link').first.text;
     } catch (e) {}
 
-    String iTunesEpisodeType;
+    String? iTunesEpisodeType;
     try {
       iTunesEpisodeType = element.findElements('itunes:episodeType').first.text;
     } catch (e) {}
 
-    String iTunesBlock;
+    String? iTunesBlock;
     try {
       iTunesBlock = element.findElements('itunes:block').first.text;
     } catch (e) {}
 
-    String iTunesKeywords;
+    String? iTunesKeywords;
     try {
       iTunesKeywords = element.findElements('itunes:keywords').first.text;
     } catch (e) {}
@@ -175,7 +175,7 @@ class PodcastEpisode {
 
   /// load PodcastEpisode from a JSON object
   factory PodcastEpisode.fromJson(Map<String, dynamic> json,
-          [Podcast parent]) =>
+          [Podcast? parent]) =>
       PodcastEpisode(
         parent: parent,
         title: json[_title],
@@ -218,7 +218,7 @@ class PodcastEpisode {
       };
 
   /// Episode Podcast
-  Podcast parent;
+  Podcast? parent;
 
   /// Episode Title
   final String title;
@@ -275,7 +275,7 @@ class PodcastEpisode {
   static const String _iTunesSeason = 'iTunesSeason';
 
   /// An episode link url
-  final String link;
+  final String? link;
   static const String _link = 'LINK';
 
   /// The episode Type
@@ -283,19 +283,19 @@ class PodcastEpisode {
   ///   Full (default)
   ///   Trailer
   ///   Bonus
-  final String iTunesEpisodeType;
+  final String? iTunesEpisodeType;
   static const String _iTunesEpisodeType = 'iTunesEpisodeType';
 
   /// The episode show or hide status.
   /// If 'Yes', the episode should not appear
-  final String iTunesBlock;
+  final String? iTunesBlock;
   static const String _iTunesBlock = 'iTunesBlock';
 
   /// Episode keywords
-  final String iTunesKeywords;
+  final String? iTunesKeywords;
   static const String _iTunesKeywords = 'itunesKeywords';
 
   /// Last played position
-  String lastPosition;
+  String? lastPosition;
   static const String _lastPosition = 'lastPosition';
 }

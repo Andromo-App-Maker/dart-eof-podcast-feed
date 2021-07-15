@@ -307,10 +307,10 @@ class Podcast {
   }
 
   /// Return number of Show Episodes
-  int get countEpisodes => episodes!.length;
+  int get countEpisodes => episodes.length;
 
   /// Return if Show has Episodes
-  bool get hasEpisodes => episodes!.isNotEmpty;
+  bool get hasEpisodes => episodes.isNotEmpty;
 
   ///
   bool subscribed;
