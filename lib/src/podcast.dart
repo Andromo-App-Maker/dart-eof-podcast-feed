@@ -313,10 +313,10 @@ class Podcast {
   bool get hasEpisodes => episodes.isNotEmpty;
 
   ///
-  bool subscribed;
+  bool? subscribed;
   static const String _subscribed = 'subscribed';
 
   ///
-  bool notify;
+  bool? notify;
   static const String _notify = 'notify';
 }
