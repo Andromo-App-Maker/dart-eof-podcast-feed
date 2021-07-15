@@ -1,7 +1,7 @@
 import 'package:xml/xml.dart';
-import 'package:flutter/foundation.dart';
 
 import '../eof_podcast_feed.dart';
+import 'utils.dart';
 
 /// Class PodcastEpisodeEnclosure
 class PodcastEpisodeEnclosure {

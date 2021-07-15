@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml/xml.dart';
 
 import 'podcast_episode.dart';
+import 'utils.dart';
 
 /**
  * See 
