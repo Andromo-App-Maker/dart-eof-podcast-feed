@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 import 'package:xml/xml.dart';
 
 import 'podcast_episode.dart';
@@ -18,13 +17,13 @@ import 'podcast_episode.dart';
 ///
 class Podcast {
   /// PodcastConstructor
-  Podcast({
-    @required this.title,
-    @required this.description,
-    @required this.podcastCoverUrl,
-    @required this.language,
-    @required this.category,
-    @required this.explicit,
+  const Podcast({
+    required this.title,
+    required this.description,
+    required this.podcastCoverUrl,
+    required this.language,
+    required this.category,
+    required this.explicit,
     this.episodes,
     this.owner,
     this.url,
@@ -42,7 +41,7 @@ class Podcast {
   factory Podcast.fromXml(XmlDocument doc) {
     final element = doc.findElements('rss').first.findElements('channel').first;
     // Read the Podcast Author
-    String _author;
+    String? _author;
     try {
       _author = element.findAllElements('googleplay:author').first.text;
     } catch (e) {}
@@ -52,53 +51,44 @@ class Podcast {
     } catch (e) {}
 
     // Read the Podcast Owner
-    String _owner;
+    String? _owner;
     try {
       _owner ??= element.findAllElements('googleplay:owner').first.text;
     } catch (e) {}
 
     try {
-      _owner ??= element
-          .findAllElements('itunes:owner')
-          .first
-          .findElements('itunes:email')
-          .first
-          .text;
+      _owner ??= element.findAllElements('itunes:owner').first.findElements('itunes:email').first.text;
     } catch (e) {}
 
     // Read the Podcast category
-    String _category;
+    String? _category;
     try {
-      _category ??= element
-          .findAllElements('googleplay:category')
-          .first
-          .getAttribute('text');
+      _category ??= element.findAllElements('googleplay:category').first.getAttribute('text');
     } catch (e) {}
     try {
-      _category ??=
-          element.findAllElements('itunes:category').first.getAttribute('text');
+      _category ??= element.findAllElements('itunes:category').first.getAttribute('text');
     } catch (e) {}
 
     // Read the Podcast Language
-    String _language;
+    String? _language;
     try {
       _language ??= element.findAllElements('language').first.text;
     } catch (e) {}
 
     // Read the Podcast Title
-    String _title;
+    String? _title;
     try {
       _title = element.findAllElements('title').first.text;
     } catch (e) {}
 
     // Read the Podcast URL
-    String _url;
+    String? _url;
     try {
       _url = element.findAllElements('link').first.text;
     } catch (e) {}
 
     // Read the Podcast Copyright
-    String _copyright;
+    String? _copyright;
     try {
       _copyright = element.findAllElements('copyright').first.text;
     } catch (e) {}
@@ -111,15 +101,14 @@ class Podcast {
       _explicit = false;
     }
 
-    String _description;
+    String? _description;
     // Read the Podcast Description
     try {
       _description ??= element.findAllElements('description').first.text;
     } catch (e) {}
 
     try {
-      _description ??=
-          element.findAllElements('googleplay:description').first.text;
+      _description ??= element.findAllElements('googleplay:description').first.text;
     } catch (e) {}
 
     try {
@@ -127,20 +116,17 @@ class Podcast {
     } catch (e) {}
 
     // Read the Podcast Cover URL
-    String _podcastCoverUrl;
+    String? _podcastCoverUrl;
     try {
-      _podcastCoverUrl ??=
-          element.findElements('googleplay:image').first.getAttribute('href');
+      _podcastCoverUrl ??= element.findElements('googleplay:image').first.getAttribute('href');
     } catch (e) {}
 
     try {
-      _podcastCoverUrl ??=
-          element.findElements('itunes:image').first.getAttribute('href');
+      _podcastCoverUrl ??= element.findElements('itunes:image').first.getAttribute('href');
     } catch (e) {}
 
     try {
-      _podcastCoverUrl ??=
-          element.findElements('image').first.findElements('url').first.text;
+      _podcastCoverUrl ??= element.findElements('image').first.findElements('url').first.text;
     } catch (e) {}
 
     // new
@@ -248,43 +234,43 @@ class Podcast {
       };
 
   /// Episode List
-  List<PodcastEpisode> episodes;
+  List<PodcastEpisode>? episodes;
   static const String _episodes = 'episodes';
 
   /// Podcast Title
-  final String title;
+  final String? title;
   static const String _title = 'title';
 
   /// Podcast Owner
-  final String owner;
+  final String? owner;
   static const String _owner = 'owner';
 
   /// Podcast Category
-  final String category;
+  final String? category;
   static const String _category = 'category';
 
   /// Podcast Language
-  final String language;
+  final String? language;
   static const String _language = 'language';
 
   /// Podcast Url
-  final String url;
+  final String? url;
   static const String _url = 'url';
 
   /// Podcast Cover Url
-  final String podcastCoverUrl;
+  final String? podcastCoverUrl;
   static const String _podcastCoverUrl = 'podcastCoverUrl';
 
   /// Podcast Author
-  final String author;
+  final String? author;
   static const String _author = 'author';
 
   /// Podcast Copyright
-  final String copyright;
+  final String? copyright;
   static const String _copyright = 'copyright';
 
   /// Podcast Description
-  final String description;
+  final String? description;
   static const String _description = 'description';
 
   /// Podcast Explicit
@@ -310,9 +296,9 @@ class Podcast {
   static const String _iTunesKeyWords = 'iTunesKeyWords';
 
   /// Init a Podcast Class with the Feed Address [uri]
-  static Future<Podcast> fromFeed(String uri) async {
+  static Future<Podcast?> fromFeed(String uri) async {
     try {
-      final rssResponse = await http.get(uri);
+      final rssResponse = await http.get(Uri.parse(uri));
       final document = XmlDocument.parse(utf8.decode(rssResponse.bodyBytes));
       return Podcast.fromXml(document);
     } catch (e) {
@@ -321,10 +307,10 @@ class Podcast {
   }
 
   /// Return number of Show Episodes
-  int get countEpisodes => episodes.length;
+  int get countEpisodes => episodes!.length;
 
   /// Return if Show has Episodes
-  bool get hasEpisodes => episodes.isNotEmpty;
+  bool get hasEpisodes => episodes!.isNotEmpty;
 
   ///
   bool subscribed;

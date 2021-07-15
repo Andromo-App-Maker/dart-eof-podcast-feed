@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/foundation.dart';
 
@@ -10,8 +9,7 @@ class PodcastEpisodeEnclosure {
   PodcastEpisodeEnclosure({this.url, this.length, this.type});
 
   /// Generate from XML
-  factory PodcastEpisodeEnclosure.fromXml(XmlElement element) =>
-      PodcastEpisodeEnclosure(
+  factory PodcastEpisodeEnclosure.fromXml(XmlElement element) => PodcastEpisodeEnclosure(
         url: element.getAttribute('url'),
         length: element.getAttribute('length'),
         type: element.getAttribute('type'),
@@ -26,15 +24,15 @@ class PodcastEpisodeEnclosure {
   Map<String, dynamic> toJson() => {_url: url, _length: length, _type: type};
 
   /// Podcast Mediafile
-  final String url;
+  final String? url;
   static const _url = 'url';
 
   /// Podcast length
-  final String length;
+  final String? length;
   static const _length = 'length';
 
   /// Podcast mime type
-  final String type;
+  final String? type;
   static const _type = 'type';
 }
 
@@ -43,8 +41,8 @@ class PodcastEpisodeEnclosure {
 class PodcastEpisode {
   /// Constructor
   PodcastEpisode(
-      {@required this.title,
-      @required this.enclosure,
+      {required this.title,
+      required this.enclosure,
       this.parent,
       this.guid,
       this.description,
@@ -69,7 +67,7 @@ class PodcastEpisode {
 
     final String title = element.findElements('title').first.text;
 
-    String description;
+    String? description;
     try {
       description = element.findElements('description').first.text;
     } catch (e) {
@@ -86,47 +84,46 @@ class PodcastEpisode {
       debugPrint('PodcastEpisode.description: $e');
     }
 
-    String notes;
+    String? notes;
     try {
       notes = element.findAllElements('content:encoded').first.text;
     } catch (e) {
       debugPrint('PodcastEpisode.notes: $e');
     }
 
-    String pubDate;
+    String? pubDate;
     try {
       pubDate = element.findElements('pubDate').first.text;
     } catch (e) {}
 
-    String duration;
+    String? duration;
     try {
       duration = element.findElements('itunes:duration').first.text;
     } catch (e) {}
 
-    String guid;
+    String? guid;
     try {
       guid = element.findElements('guid').first.text;
     } catch (e) {}
 
-    String iTunesImageUrl;
+    String? iTunesImageUrl;
     try {
-      iTunesImageUrl =
-          element.findElements('itunes:image').first.getAttribute('href');
+      iTunesImageUrl = element.findElements('itunes:image').first.getAttribute('href');
     } catch (e) {}
 
     iTunesImageUrl ??= iTunesImageUrl;
 
-    String iTunesTitle;
+    String? iTunesTitle;
     try {
       iTunesTitle = element.findElements('itunes:title').first.text;
     } catch (e) {}
 
-    String iTunesEpisode;
+    String? iTunesEpisode;
     try {
       iTunesEpisode = element.findElements('itunes:episode').first.text;
     } catch (e) {}
 
-    String iTunesSeason;
+    String? iTunesSeason;
     try {
       iTunesEpisode = element.findElements('itunes:season').first.text;
     } catch (e) {}
@@ -232,49 +229,49 @@ class PodcastEpisode {
   static const String _enclosure = 'enclosure';
 
   /// Episode guid
-  final String guid;
+  final String? guid;
   static const String _guid = 'guid';
 
   /// Episode Description
-  final String description;
+  final String? description;
   static const String _description = 'description';
 
   /// Episode Itunes Description
-  final String itunesDescription;
+  final String? itunesDescription;
   static const String _itunesDescription = 'itunesDescription';
 
   /// merged [itunesDescription] and [description]
-  String get episodeDescription => itunesDescription ?? description;
+  String? get episodeDescription => itunesDescription ?? description;
 
   /// Episode Notes
-  final String notes;
+  final String? notes;
   static const String _notes = 'notes';
 
   /// Episode Date
-  final String pubDate;
+  final String? pubDate;
   static const String _pubDate = 'pubDate';
 
   /// Episode Duration
-  final String duration;
+  final String? duration;
   static const String _duration = 'duration';
 
   /// Episode cover Url
-  final String iTunesImageUrl;
+  final String? iTunesImageUrl;
   static const String _iTunesImageUrl = 'iTunesImageUrl';
 
   /// Episode Title for itunes
-  final String iTunesTitle;
+  final String? iTunesTitle;
   static const String _iTunesTitle = 'iTunesTitle';
 
   /// Merged Episode Title
   String get episodeTitle => iTunesTitle ?? title;
 
   /// Episode number
-  final String iTunesEpisode;
+  final String? iTunesEpisode;
   static const String _iTunesEpisode = 'iTunesEpisode';
 
   /// Episode season number
-  final String iTunesSeason;
+  final String? iTunesSeason;
   static const String _iTunesSeason = 'iTunesSeason';
 
   /// An episode link url
