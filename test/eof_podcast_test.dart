@@ -45,6 +45,6 @@ void main() {
     expect(feed.episodes.first.enclosure.url,
         'https://media.blubrry.com/hiromaeda/content.blubrry.com/hiromaeda/20_FINAL_Episode_20-Mukai-san_mixdown.mp3');
     expect(feed.episodes.first.enclosure.length, '73936531');
-    expect(feed.episodes!.first.enclosure.type, 'audio/mpeg');
+    expect(feed.episodes.first.enclosure.type, 'audio/mpeg');
   });
 }
