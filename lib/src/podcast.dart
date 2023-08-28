@@ -43,17 +43,17 @@ class Podcast {
     // Read the Podcast Author
     String? _author;
     try {
-      _author = element.findAllElements('googleplay:author').first.text;
+      _author = element.findAllElements('googleplay:author').first.innerText;
     } catch (e) {}
 
     try {
-      _author ??= element.findAllElements('itunes:author').first.text;
+      _author ??= element.findAllElements('itunes:author').first.innerText;
     } catch (e) {}
 
     // Read the Podcast Owner
     String? _owner;
     try {
-      _owner ??= element.findAllElements('googleplay:owner').first.text;
+      _owner ??= element.findAllElements('googleplay:owner').first.innerText;
     } catch (e) {}
 
     try {
@@ -62,7 +62,7 @@ class Podcast {
           .first
           .findElements('itunes:email')
           .first
-          .text;
+          .innerText;
     } catch (e) {}
 
     // Read the Podcast category
@@ -81,31 +81,31 @@ class Podcast {
     // Read the Podcast Language
     String? _language;
     try {
-      _language ??= element.findAllElements('language').first.text;
+      _language ??= element.findAllElements('language').first.innerText;
     } catch (e) {}
 
     // Read the Podcast Title
     String? _title;
     try {
-      _title = element.findAllElements('title').first.text;
+      _title = element.findAllElements('title').first.innerText;
     } catch (e) {}
 
     // Read the Podcast URL
     String? _url;
     try {
-      _url = element.findAllElements('link').first.text;
+      _url = element.findAllElements('link').first.innerText;
     } catch (e) {}
 
     // Read the Podcast Copyright
     String? _copyright;
     try {
-      _copyright = element.findAllElements('copyright').first.text;
+      _copyright = element.findAllElements('copyright').first.innerText;
     } catch (e) {}
 
     // Read the Podcast Copyright
     bool _explicit;
     try {
-      _explicit = element.findAllElements('explicit').first.text == 'true';
+      _explicit = element.findAllElements('explicit').first.innerText == 'true';
     } catch (e) {
       _explicit = false;
     }
@@ -113,16 +113,17 @@ class Podcast {
     String? _description;
     // Read the Podcast Description
     try {
-      _description ??= element.findAllElements('description').first.text;
+      _description ??= element.findAllElements('description').first.innerText;
     } catch (e) {}
 
     try {
       _description ??=
-          element.findAllElements('googleplay:description').first.text;
+          element.findAllElements('googleplay:description').first.innerText;
     } catch (e) {}
 
     try {
-      _description ??= element.findAllElements('itunes:summary').first.text;
+      _description ??=
+          element.findAllElements('itunes:summary').first.innerText;
     } catch (e) {}
 
     // Read the Podcast Cover URL
@@ -138,30 +139,36 @@ class Podcast {
     } catch (e) {}
 
     try {
-      _podcastCoverUrl ??=
-          element.findElements('image').first.findElements('url').first.text;
+      _podcastCoverUrl ??= element
+          .findElements('image')
+          .first
+          .findElements('url')
+          .first
+          .innerText;
     } catch (e) {}
 
     // new
 
     String? _lastBuildDate;
     try {
-      _lastBuildDate ??= element.findElements('lastBuildDate').first.text;
+      _lastBuildDate ??= element.findElements('lastBuildDate').first.innerText;
     } catch (e) {}
 
     String? _pubDate;
     try {
-      _pubDate ??= element.findElements('pubDate').first.text;
+      _pubDate ??= element.findElements('pubDate').first.innerText;
     } catch (e) {}
 
     String? _iTunesSubtitle;
     try {
-      _iTunesSubtitle ??= element.findElements('itunes:summary').first.text;
+      _iTunesSubtitle ??=
+          element.findElements('itunes:summary').first.innerText;
     } catch (e) {}
 
     String? _iTunesKeyWords;
     try {
-      _iTunesKeyWords ??= element.findElements('itunes:keywords').first.text;
+      _iTunesKeyWords ??=
+          element.findElements('itunes:keywords').first.innerText;
     } catch (e) {}
 
     final Podcast p = Podcast(
@@ -220,7 +227,7 @@ class Podcast {
       notify: json[_notify],
     );
     p.episodes = [
-      for (var data in json[_episodes]) PodcastEpisode.fromJson(data, p)
+      for (final data in json[_episodes]) PodcastEpisode.fromJson(data, p)
     ];
     return p;
   }

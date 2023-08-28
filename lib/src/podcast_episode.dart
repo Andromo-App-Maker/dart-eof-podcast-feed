@@ -70,45 +70,46 @@ class PodcastEpisode {
     final PodcastEpisodeEnclosure enclosure = PodcastEpisodeEnclosure.fromXml(
         element.findElements('enclosure').first);
 
-    final String title = element.findElements('title').first.text;
+    final String title = element.findElements('title').first.innerText;
 
     String? description;
     try {
-      description = element.findElements('description').first.text;
+      description = element.findElements('description').first.innerText;
     } catch (e) {
       debugPrint('PodcastEpisode.description: $e');
     }
     try {
-      description ??= element.findElements('googleplay:description').first.text;
+      description ??=
+          element.findElements('googleplay:description').first.innerText;
     } catch (e) {
       debugPrint('PodcastEpisode.description: $e');
     }
     try {
-      description ??= element.findElements('itunes:summary').first.text;
+      description ??= element.findElements('itunes:summary').first.innerText;
     } catch (e) {
       debugPrint('PodcastEpisode.description: $e');
     }
 
     String? notes;
     try {
-      notes = element.findAllElements('content:encoded').first.text;
+      notes = element.findAllElements('content:encoded').first.innerText;
     } catch (e) {
       debugPrint('PodcastEpisode.notes: $e');
     }
 
     String? pubDate;
     try {
-      pubDate = element.findElements('pubDate').first.text;
+      pubDate = element.findElements('pubDate').first.innerText;
     } catch (e) {}
 
     String? duration;
     try {
-      duration = element.findElements('itunes:duration').first.text;
+      duration = element.findElements('itunes:duration').first.innerText;
     } catch (e) {}
 
     String? guid;
     try {
-      guid = element.findElements('guid').first.text;
+      guid = element.findElements('guid').first.innerText;
     } catch (e) {}
 
     String? iTunesImageUrl;
@@ -121,42 +122,43 @@ class PodcastEpisode {
 
     String? iTunesTitle;
     try {
-      iTunesTitle = element.findElements('itunes:title').first.text;
+      iTunesTitle = element.findElements('itunes:title').first.innerText;
     } catch (e) {}
 
     String? iTunesEpisode;
     try {
-      iTunesEpisode = element.findElements('itunes:episode').first.text;
+      iTunesEpisode = element.findElements('itunes:episode').first.innerText;
     } catch (e) {}
 
     String? iTunesSeason;
     try {
-      iTunesEpisode = element.findElements('itunes:season').first.text;
+      iTunesEpisode = element.findElements('itunes:season').first.innerText;
     } catch (e) {}
 
     String? itunesDescription;
     try {
-      itunesDescription = element.findElements('itunes:season').first.text;
+      itunesDescription = element.findElements('itunes:season').first.innerText;
     } catch (e) {}
 
     String? link;
     try {
-      link = element.findElements('link').first.text;
+      link = element.findElements('link').first.innerText;
     } catch (e) {}
 
     String? iTunesEpisodeType;
     try {
-      iTunesEpisodeType = element.findElements('itunes:episodeType').first.text;
+      iTunesEpisodeType =
+          element.findElements('itunes:episodeType').first.innerText;
     } catch (e) {}
 
     String? iTunesBlock;
     try {
-      iTunesBlock = element.findElements('itunes:block').first.text;
+      iTunesBlock = element.findElements('itunes:block').first.innerText;
     } catch (e) {}
 
     String? iTunesKeywords;
     try {
-      iTunesKeywords = element.findElements('itunes:keywords').first.text;
+      iTunesKeywords = element.findElements('itunes:keywords').first.innerText;
     } catch (e) {}
 
     return PodcastEpisode(
