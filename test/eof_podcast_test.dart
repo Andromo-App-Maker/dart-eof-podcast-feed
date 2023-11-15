@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:eof_podcast_feed/eof_podcast_feed.dart';
 import 'package:test/test.dart';
 import 'package:xml/xml.dart';
-import 'package:eof_podcast_feed/eof_podcast_feed.dart';
 
 void main() {
   test('test roundup.xml', () async {
