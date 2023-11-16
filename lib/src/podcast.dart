@@ -7,7 +7,7 @@ import 'podcast_episode.dart';
 import 'utils.dart';
 
 /**
- * See 
+ * See
  * https://help.apple.com/itc/podcasts_connect/#/itcb54353390
  * https://support.google.com/podcast-publishers/answer/9889544?hl=ja
  */
